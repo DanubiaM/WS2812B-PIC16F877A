@@ -1,0 +1,19 @@
+#INT_EXT
+void interrupcion_ext()
+{
+   mode ++;
+   if (mode>=5){mode=0;}
+}
+/*
+#int_TIMER0 //la siguiente función tiene que ser la de interrupción del TMR0
+void  TIMER0_isr(void) //function interrupción TMR0
+{
+    RA2 = ~RA2; //RB3 = !RB3 //output_toggle(PIN_B0);
+    mode ++;
+    if(mode == 9) {
+        mode = 0;
+        flag_break = true;
+    }
+    set_TIMER0(0xFF);
+}
+*/

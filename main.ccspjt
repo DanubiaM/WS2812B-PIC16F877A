@@ -1,0 +1,101 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.025
+Compiler=PCM
+[Target Data]
+FileList=main.c
+[main.c]
+Type=4
+[mru-list]
+1=main.c
+
+[ProjectLog]
+Days=5
+D1=18-10-2021
+D1_L=9
+D1_L1=[71826]Stopped Editing.
+D1_L2=[72361]Started Editing.
+D1_L3=[73093]Stopped Editing.
+TotalEdit=28
+TotalDebug=0
+D1_E=13
+D1_D=0
+D1_L4=[73093]Project Closed.
+D1_L5=[73102]Project Opened.
+D1_L6=[73110]Started Editing.
+D1_L7=[73743]Stopped Editing.
+D1_L8=[77132]Started Editing.
+D1_L9=[77433]Stopped Editing.
+D2=19-10-2021
+D2_L=12
+D2_L1=[29158]Started Editing.
+D2_L2=[29619]Stopped Editing.
+D2_L3=[30248]Started Editing.
+D2_L4=[30618]Stopped Editing.
+D2_E=15
+D2_D=0
+D2_L5=[30618]Project Closed.
+D2_L6=[31098]Project Opened.
+D2_L7=[31277]Project Closed.
+D2_L8=[41420]Project Opened.
+D2_L9=[82184]Started Editing.
+D2_L10=[82843]Stopped Editing.
+D2_L11=[83054]Started Editing.
+D2_L12=[83381]Stopped Editing.
+D3=20-10-2021
+D3_L=25
+D3_L1=[70777]Started Editing.
+D3_L2=[71154]Stopped Editing.
+D3_L3=[72523]Started Editing.
+D3_L4=[72871]Stopped Editing.
+D3_L5=[72915]Started Editing.
+D3_L6=[73216]Stopped Editing.
+D3_L7=[76442]Started Editing.
+D3_L8=[76818]Stopped Editing.
+D3_L9=[77555]Started Editing.
+D3_L10=[77939]Stopped Editing.
+D3_L11=[78058]Started Editing.
+D3_L12=[79147]Stopped Editing.
+D3_L13=[79403]Started Editing.
+D3_L14=[79740]Stopped Editing.
+D3_L15=[79847]Started Editing.
+D3_L16=[80589]Stopped Editing.
+D3_L17=[80727]Started Editing.
+D3_L18=[81078]Stopped Editing.
+D3_L19=[83641]Started Editing.
+D3_L20=[84253]Stopped Editing.
+D3_L21=[84255]Started Editing.
+D3_L22=[84994]Stopped Editing.
+D3_L23=[85414]Started Editing.
+D3_L24=[86105]Stopped Editing.
+D3_L25=[86235]Started Editing.
+D4=21-10-2021
+D4_L=9
+D4_L1=[201]Stopped Editing.
+D4_L2=[458]Started Editing.
+D4_L3=[1111]Stopped Editing.
+D4_L4=[1120]Started Editing.
+D4_L5=[1701]Stopped Editing.
+D4_L6=[2539]Started Editing.
+D4_L7=[4632]Stopped Editing.
+D4_L8=[35370]Started Editing.
+D4_L9=[35707]Stopped Editing.
+D5=23-10-2021
+D5_L=3
+D5_L1=[41413]Project Opened.
+D5_L2=[60540]Started Editing.
+D5_L3=[61018]Stopped Editing.
+
+[Opened Files]
+1=main.c
+2=neopixel.c
+3=fun.c
+4=irqs.c
+5=ports.h
+6=vars.h
+7=
+8=
+[Units]
+Count=1
+1=main (main)

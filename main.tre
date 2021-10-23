@@ -1,0 +1,81 @@
+ÀÄmain
+   ÃÄMAIN  0/319  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄiniciaLEDS  0/29  Ram=2
+   ³  ³  ÀÄNeoDraw  0/97  Ram=3
+   ³  ³     ÃÄNeoBit  0/15  Ram=1
+   ³  ³     ÃÄNeoBit  0/15  Ram=1
+   ³  ³     ÀÄNeoBit  0/15  Ram=1
+   ³  ÃÄ@goto10814  0/13  Ram=0
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÃÄ@const643  0/28  Ram=0
+   ³  ³  ÃÄ@const643  0/28  Ram=0
+   ³  ³  ÃÄ@const643  0/28  Ram=0
+   ³  ³  ÃÄNeoDraw  0/97  Ram=3
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄmode_SingleColor  0/64  Ram=3
+   ³  ³  ÀÄ*
+   ³  ÀÄmode_SingleColor  0/64  Ram=3
+   ³     ÀÄ*
+   ÀÄinterrupcion_ext  0/9  Ram=0

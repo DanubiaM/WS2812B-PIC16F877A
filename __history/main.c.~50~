@@ -1,0 +1,44 @@
+#include <16F877A.h>
+
+#fuses HS,NOWDT,NOPROTECT,NOPUT
+
+#use delay(clock=20MHz, crystal=20MHz)
+#use rs232(baud=9600,parity=N,xmit=PIN_B1,rcv=PIN_B0,bits=8)
+#use FAST_IO(A)
+
+#define NeoPin PIN_A3
+#define NUMPIXELS 26
+
+#include "ports.h"
+#include "vars.h"
+#include "NeoPixel.c"
+#include "irqs.c"
+#include "fun.c"
+
+void main()
+{
+    set_tris_b(0x01);   //int_ext=RX
+    set_tris_a(0x10);
+    //port_b_pullups(true);
+    setup_timer_0(RTCC_EXT_L_TO_H | RTCC_DIV_1);
+    enable_interrupts(INT_TIMER0);
+    enable_interrupts(INT_EXT_H2L); //ext_int_edge(H_TO_L);
+    enable_interrupts(global);
+    set_TIMER0(0xFF);   //init timer with last value
+    output_high(PIN_A2);    delay_ms(50);
+    output_low(PIN_A2);    
+   
+   
+    int x= 0;
+    while(TRUE)
+    {
+    if(x==0){
+     // mode_RGB();
+     mode_SingleColor(6);
+     // shift_Rainbow();
+     x++;
+      }
+   
+
+    }   //while
+}   //main

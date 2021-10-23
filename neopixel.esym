@@ -1,0 +1,7 @@
+D G "__PCM__" 0 0 ""5.025""
+D G "__DEVICE__" 0 0 ""
+D G "__DATE__" 0 0 ""18-out-21""
+D G "__TIME__" 0 0 ""19:50:55""
+V L "Bit" 0 2 "int8" `35 
+F G "NeoBit" 0 3 "void(int8 Bit)" `34 
+C L "NeoBit" 0 0 1 "FUNCTION"

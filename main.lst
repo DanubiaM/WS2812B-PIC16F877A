@@ -1,0 +1,980 @@
+CCS PCM C Compiler, Version 5.025, 7201               21-out-21 11:56
+
+               Filename:   C:\Users\danub\OneDrive\Área de Trabalho\IFMT\7 semestre\Microcontroladores\Projetos\Projeto Unidade 1\RGBTESTEFINAL\main.lst
+
+               ROM used:   638 words (8%)
+                           Largest free fragment is 2048
+               RAM used:   97 (26%) at main() level
+                           103 (28%) worst case
+               Stack used: 4 locations (3 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  01
+0001:  MOVWF  0A
+0002:  GOTO   132
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  BCF    03.7
+0016:  BCF    03.5
+0017:  BTFSS  0B.4
+0018:  GOTO   01B
+0019:  BTFSC  0B.1
+001A:  GOTO   02C
+001B:  MOVF   22,W
+001C:  MOVWF  04
+001D:  MOVF   23,W
+001E:  MOVWF  77
+001F:  MOVF   24,W
+0020:  MOVWF  78
+0021:  MOVF   25,W
+0022:  MOVWF  79
+0023:  MOVF   26,W
+0024:  MOVWF  7A
+0025:  MOVF   20,W
+0026:  MOVWF  0A
+0027:  SWAPF  21,W
+0028:  MOVWF  03
+0029:  SWAPF  7F,F
+002A:  SWAPF  7F,W
+002B:  RETFIE
+002C:  BCF    0A.3
+002D:  BCF    0A.4
+002E:  GOTO   04B
+.................... #include <16F877A.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+002F:  BCF    0A.0
+0030:  BCF    0A.1
+0031:  BCF    0A.2
+0032:  ADDWF  02,F
+0033:  RETLW  FF
+0034:  RETLW  FF
+0035:  RETLW  FF
+0036:  RETLW  00
+0037:  RETLW  00
+0038:  RETLW  00
+0039:  RETLW  9F
+003A:  RETLW  FF
+003B:  RETLW  00
+003C:  RETLW  45
+003D:  RETLW  E9
+003E:  RETLW  FF
+003F:  RETLW  B0
+0040:  RETLW  00
+0041:  RETLW  00
+0042:  RETLW  FF
+0043:  RETLW  00
+0044:  RETLW  00
+0045:  RETLW  00
+0046:  RETLW  00
+0047:  RETLW  FF
+0048:  RETLW  FF
+0049:  RETLW  FF
+004A:  RETLW  FF
+*
+0271:  BCF    0A.0
+0272:  BSF    0A.1
+0273:  BCF    0A.2
+0274:  ADDWF  02,F
+0275:  GOTO   15E
+0276:  GOTO   17C
+0277:  GOTO   19B
+0278:  GOTO   1BB
+0279:  GOTO   1DB
+027A:  GOTO   1FB
+027B:  GOTO   21B
+027C:  GOTO   23B
+027D:  GOTO   25B
+....................  
+.................... #list 
+....................  
+....................  
+.................... #fuses HS,NOWDT,NOPROTECT,NOPUT 
+....................  
+.................... #use delay(clock=20MHz, crystal=20MHz) 
+*
+010C:  MOVLW  A3
+010D:  MOVWF  04
+010E:  BCF    03.7
+010F:  MOVF   00,W
+0110:  BTFSC  03.2
+0111:  GOTO   11F
+0112:  MOVLW  06
+0113:  MOVWF  78
+0114:  CLRF   77
+0115:  DECFSZ 77,F
+0116:  GOTO   115
+0117:  DECFSZ 78,F
+0118:  GOTO   114
+0119:  MOVLW  7B
+011A:  MOVWF  77
+011B:  DECFSZ 77,F
+011C:  GOTO   11B
+011D:  DECFSZ 00,F
+011E:  GOTO   112
+*
+0121:  MOVLW  03
+0122:  BSF    03.5
+0123:  SUBWF  22,F
+0124:  BTFSS  03.0
+0125:  GOTO   130
+0126:  MOVLW  A2
+0127:  MOVWF  04
+0128:  BCF    03.7
+0129:  MOVF   00,W
+012A:  BTFSC  03.2
+012B:  GOTO   130
+012C:  GOTO   12E
+012D:  GOTO   12E
+012E:  DECFSZ 00,F
+012F:  GOTO   12D
+0130:  BCF    03.5
+0131:  RETURN
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_B1,rcv=PIN_B0,bits=8) 
+.................... #use FAST_IO(A) 
+....................  
+.................... #define NeoPin PIN_A3 
+.................... #define NUMPIXELS 26 
+....................  
+.................... #include "ports.h" 
+.................... #bit RB0=0x6.0    //RX 
+.................... #bit RB1=0x6.1    //TX 
+.................... #bit RB2=0x6.2 
+.................... #bit RB3=0x6.3 
+.................... #bit RB4=0x6.4 
+.................... #bit RB5=0x6.5 
+.................... #bit RB6=0x6.6 
+.................... #bit RB7=0x6.7 
+....................  
+.................... #bit RA0=0x5.0    // 
+.................... #bit RA1=0x5.1    // 
+.................... #bit RA2=0x5.2    //led 
+.................... #bit RA3=0x5.3   //neopin 
+.................... #bit RA4=0x5.3   //btn 
+....................  
+.................... #include "vars.h" 
+.................... //***************************************************************************** 
+....................  
+.................... unsigned int8 NeoGreen [NUMPIXELS]; 
+.................... unsigned int8 NeoBlue [NUMPIXELS]; 
+.................... unsigned int8 NeoRed [NUMPIXELS]; 
+....................  
+.................... const unsigned  int8  rainbow[3][8] = { 
+....................   { 255,  255, 255,   0,    0,    0, 159, 255 }, 
+....................   { 0,     69, 233, 255,  176,    0,   0, 255 }, 
+....................   { 0,      0,   0,   0,  255,  255, 255, 255 } 
+.................... }; 
+.................... unsigned int8 temp; 
+....................  
+.................... int8 i = 0; 
+.................... int8 mode = 0; 
+....................  
+.................... unsigned int8 tempR; 
+.................... unsigned int8 tempG; 
+.................... unsigned int8 tempB; 
+....................  
+.................... int1 flag_break = FALSE; 
+....................  
+....................  
+.................... #include "NeoPixel.c" 
+.................... //Método resposanvável pelo envio dos bits 
+.................... void NeoBit (int1 Bit) 
+.................... { 
+....................     if(Bit  == 1) 
+*
+0054:  BSF    03.5
+0055:  DECFSZ 26,W
+0056:  GOTO   05E
+....................     { RA3 = 1; delay_cycles(4); RA3 = 0;  //Cada delay_cycles equivale a 200ns ou 0.2us ->Cristal 20MHz 
+0057:  BCF    03.5
+0058:  BSF    05.3
+0059:  GOTO   05A
+005A:  GOTO   05B
+005B:  BCF    05.3
+....................     }else 
+005C:  GOTO   062
+005D:  BSF    03.5
+....................     { RA3 = 1; delay_cycles(1); RA3 = 0;} // 
+005E:  BCF    03.5
+005F:  BSF    05.3
+0060:  NOP
+0061:  BCF    05.3
+0062:  RETURN
+.................... } 
+....................  
+.................... //Método responsável por enviar o bit ao método neoBit 
+.................... void NeoDraw (void) 
+.................... { 
+....................     unsigned int8 NeoPixel; 
+....................     signed int8 BitCount; 
+....................     for(NeoPixel  = 0; NeoPixel < NUMPIXELS; NeoPixel++) 
+0063:  BSF    03.5
+0064:  CLRF   23
+0065:  MOVF   23,W
+0066:  SUBLW  19
+0067:  BTFSS  03.0
+0068:  GOTO   0C2
+....................     { 
+....................         for(BitCount  = 7; BitCount >= 0; BitCount--) 
+0069:  MOVLW  07
+006A:  MOVWF  24
+006B:  BTFSC  24.7
+006C:  GOTO   086
+....................             NeoBit(bit_test(NeoGreen[NeoPixel], BitCount) ); 
+006D:  MOVLW  27
+006E:  ADDWF  23,W
+006F:  MOVWF  04
+0070:  BCF    03.7
+0071:  MOVF   00,W
+0072:  MOVWF  25
+0073:  MOVWF  77
+0074:  MOVF   24,W
+0075:  MOVWF  78
+0076:  BTFSC  03.2
+0077:  GOTO   07C
+0078:  BCF    03.0
+0079:  RRF    77,F
+007A:  DECFSZ 78,F
+007B:  GOTO   078
+007C:  MOVLW  00
+007D:  BTFSC  77.0
+007E:  MOVLW  01
+007F:  MOVWF  25
+0080:  MOVWF  26
+0081:  BCF    03.5
+0082:  CALL   054
+0083:  BSF    03.5
+0084:  DECF   24,F
+0085:  GOTO   06B
+....................         for(BitCount  = 7; BitCount >= 0; BitCount--) 
+0086:  MOVLW  07
+0087:  MOVWF  24
+0088:  BTFSC  24.7
+0089:  GOTO   0A3
+....................             NeoBit(bit_test(NeoRed[NeoPixel], BitCount) ); 
+008A:  MOVLW  5B
+008B:  ADDWF  23,W
+008C:  MOVWF  04
+008D:  BCF    03.7
+008E:  MOVF   00,W
+008F:  MOVWF  25
+0090:  MOVWF  77
+0091:  MOVF   24,W
+0092:  MOVWF  78
+0093:  BTFSC  03.2
+0094:  GOTO   099
+0095:  BCF    03.0
+0096:  RRF    77,F
+0097:  DECFSZ 78,F
+0098:  GOTO   095
+0099:  MOVLW  00
+009A:  BTFSC  77.0
+009B:  MOVLW  01
+009C:  MOVWF  25
+009D:  MOVWF  26
+009E:  BCF    03.5
+009F:  CALL   054
+00A0:  BSF    03.5
+00A1:  DECF   24,F
+00A2:  GOTO   088
+....................         for(BitCount  = 7; BitCount >= 0; BitCount--) 
+00A3:  MOVLW  07
+00A4:  MOVWF  24
+00A5:  BTFSC  24.7
+00A6:  GOTO   0C0
+....................             NeoBit(bit_test(NeoBlue[NeoPixel], BitCount) ); 
+00A7:  MOVLW  41
+00A8:  ADDWF  23,W
+00A9:  MOVWF  04
+00AA:  BCF    03.7
+00AB:  MOVF   00,W
+00AC:  MOVWF  25
+00AD:  MOVWF  77
+00AE:  MOVF   24,W
+00AF:  MOVWF  78
+00B0:  BTFSC  03.2
+00B1:  GOTO   0B6
+00B2:  BCF    03.0
+00B3:  RRF    77,F
+00B4:  DECFSZ 78,F
+00B5:  GOTO   0B2
+00B6:  MOVLW  00
+00B7:  BTFSC  77.0
+00B8:  MOVLW  01
+00B9:  MOVWF  25
+00BA:  MOVWF  26
+00BB:  BCF    03.5
+00BC:  CALL   054
+00BD:  BSF    03.5
+00BE:  DECF   24,F
+00BF:  GOTO   0A5
+00C0:  INCF   23,F
+00C1:  GOTO   065
+....................     } 
+00C2:  BCF    03.5
+00C3:  RETURN
+....................  
+....................     //output_low(NeoPin); 
+....................     //RA3 = 0; //delay_cycles(1); 
+.................... } 
+....................  
+....................  
+....................  
+.................... #include "irqs.c" 
+.................... #INT_EXT 
+.................... void interrupcion_ext() 
+.................... { 
+....................     
+....................    mode ++; 
+*
+004B:  INCF   7B,F
+....................    if (mode>8){mode=0;} 
+004C:  MOVF   7B,W
+004D:  SUBLW  08
+004E:  BTFSS  03.0
+004F:  CLRF   7B
+.................... } 
+....................  
+....................  
+0050:  BCF    0B.1
+0051:  BCF    0A.3
+0052:  BCF    0A.4
+0053:  GOTO   01B
+.................... #include "fun.c" 
+....................  
+.................... void mode_SingleColor(int8 c) 
+.................... { 
+....................     for(i = 0; i < NUMPIXELS; i++) 
+*
+00E1:  CLRF   76
+00E2:  MOVF   76,W
+00E3:  SUBLW  19
+00E4:  BTFSS  03.0
+00E5:  GOTO   108
+....................     { 
+....................         NeoRed[i] = rainbow[0][c]; 
+00E6:  MOVLW  5B
+00E7:  ADDWF  76,W
+00E8:  MOVWF  04
+00E9:  BCF    03.7
+00EA:  BSF    03.5
+00EB:  MOVF   22,W
+00EC:  BCF    03.5
+00ED:  CALL   02F
+00EE:  MOVWF  78
+00EF:  MOVWF  00
+....................         NeoGreen[i] = rainbow[1][c]; 
+00F0:  MOVLW  27
+00F1:  ADDWF  76,W
+00F2:  MOVWF  04
+00F3:  BCF    03.7
+00F4:  MOVLW  08
+00F5:  BSF    03.5
+00F6:  ADDWF  22,W
+00F7:  BCF    03.5
+00F8:  CALL   02F
+00F9:  MOVWF  78
+00FA:  MOVWF  00
+....................         NeoBlue[i] = rainbow[2][c]; 
+00FB:  MOVLW  41
+00FC:  ADDWF  76,W
+00FD:  MOVWF  04
+00FE:  BCF    03.7
+00FF:  MOVLW  10
+0100:  BSF    03.5
+0101:  ADDWF  22,W
+0102:  BCF    03.5
+0103:  CALL   02F
+0104:  MOVWF  78
+0105:  MOVWF  00
+0106:  INCF   76,F
+0107:  GOTO   0E2
+....................     } 
+....................  
+....................     NeoDraw(); 
+0108:  CALL   063
+....................     delay_ms(40); 
+0109:  MOVLW  28
+010A:  BSF    03.5
+010B:  MOVWF  23
+*
+011F:  BCF    03.5
+0120:  RETURN
+.................... } 
+....................  
+.................... //Método responsavel por apresentar as cores em RGB variando por tom, do mais forte à cor e vice versa. 
+.................... void mode_RGB() 
+.................... { 
+....................      
+....................     tempR = 0; tempG = 0; tempB = 0; 
+....................      
+....................     //Primeiro laço define o pixel 
+....................     for(int rgb  = 0; rgb < 3; rgb++){ 
+....................      
+....................          //Segundo laço responsavel por indicar a cor 0-255 
+....................         for(int16 temp = 1; temp < 256; temp++) 
+....................         { 
+....................             if(rgb  == 0) 
+....................                 tempR = temp; 
+....................             else  
+....................                 if(rgb == 1) 
+....................                     tempG = temp; 
+....................                 else 
+....................                     tempB = temp; 
+....................             //passa a cor temporaria para cada led 
+....................             for(i = 0; i < NUMPIXELS; i++) 
+....................             { 
+....................                 NeoRed[i] = tempR; 
+....................                 NeoGreen[i] = tempG; 
+....................                 NeoBlue[i] = tempB; 
+....................                 //delay_ms(100); 
+....................             } 
+....................  
+....................             NeoDraw(); 
+....................             if(flag_break){ 
+....................                 break; 
+....................             } 
+....................             delay_ms(50); 
+....................         } 
+....................     }  
+....................   
+....................     for(int rgb2  = 0; rgb2 < 3; rgb2++) 
+....................         for(temp = 255; temp > 0; temp--) { 
+....................             if(rgb2  == 0) 
+....................                 tempR = temp; 
+....................             else  
+....................             if(rgb2 == 1) 
+....................                 tempG = temp; 
+....................             else 
+....................                 tempB = temp; 
+....................             for(i = 0; i < NUMPIXELS; i++) { 
+....................                 NeoRed[i] = tempR; 
+....................                 NeoGreen[i] = tempG; 
+....................                 NeoBlue[i] = tempB; 
+....................                 //delay_ms(100); 
+....................             } 
+....................  
+....................             NeoDraw(); 
+....................             if(flag_break) { 
+....................                 break; 
+....................             } 
+....................  
+....................             delay_ms(50); 
+....................         } 
+....................      
+.................... } 
+.................... void iniciaLEDS(void){ 
+....................   for(i = 0; i < NUMPIXELS; i++) 
+*
+00C4:  CLRF   76
+00C5:  MOVF   76,W
+00C6:  SUBLW  19
+00C7:  BTFSS  03.0
+00C8:  GOTO   0DD
+....................     { 
+....................         NeoRed[i] = rainbow[0][7]; 
+00C9:  MOVLW  5B
+00CA:  ADDWF  76,W
+00CB:  MOVWF  04
+00CC:  BCF    03.7
+00CD:  MOVLW  FF
+00CE:  MOVWF  00
+....................         NeoGreen[i] = rainbow[1][7]; 
+00CF:  MOVLW  27
+00D0:  ADDWF  76,W
+00D1:  MOVWF  04
+00D2:  BCF    03.7
+00D3:  MOVLW  FF
+00D4:  MOVWF  00
+....................         NeoBlue[i] = rainbow[2][7]; 
+00D5:  MOVLW  41
+00D6:  ADDWF  76,W
+00D7:  MOVWF  04
+00D8:  BCF    03.7
+00D9:  MOVLW  FF
+00DA:  MOVWF  00
+00DB:  INCF   76,F
+00DC:  GOTO   0C5
+....................     } 
+....................  
+....................     NeoDraw(); 
+00DD:  CALL   063
+00DE:  BCF    0A.3
+00DF:  BCF    0A.4
+00E0:  GOTO   155 (RETURN)
+....................      
+....................  
+....................  
+.................... } 
+....................  
+....................  
+.................... void main() 
+*
+0132:  MOVF   03,W
+0133:  ANDLW  1F
+0134:  MOVWF  03
+0135:  BSF    03.5
+0136:  BCF    06.1
+0137:  BCF    03.5
+0138:  BSF    06.1
+0139:  CLRF   76
+013A:  CLRF   7B
+013B:  BSF    03.5
+013C:  BCF    20.0
+013D:  BSF    1F.0
+013E:  BSF    1F.1
+013F:  BSF    1F.2
+0140:  BCF    1F.3
+0141:  MOVLW  07
+0142:  MOVWF  1C
+0143:  BCF    03.7
+.................... { 
+....................     set_tris_b(0x10);   //Definido como porta de entrada B0 E B1 -> 0000 0010 
+0144:  MOVLW  10
+0145:  MOVWF  06
+....................     set_tris_a(0x10); 
+0146:  MOVWF  05
+....................     //port_b_pullups(true); 
+....................     setup_timer_0(RTCC_INTERNAL|RTCC_DIV_1|RTCC_8_bit); 
+0147:  MOVF   01,W
+0148:  ANDLW  C7
+0149:  IORLW  08
+014A:  MOVWF  01
+....................     enable_interrupts(INT_EXT); 
+014B:  BCF    03.5
+014C:  BSF    0B.4
+....................     ext_int_edge(L_TO_H); //ext_int_edge(H_TO_L); 
+014D:  BSF    03.5
+014E:  BSF    01.6
+....................     enable_interrupts(global); 
+014F:  MOVLW  C0
+0150:  BCF    03.5
+0151:  IORWF  0B,F
+....................     set_TIMER0(0xFF);   //init timer with last value    
+0152:  MOVLW  FF
+0153:  MOVWF  01
+....................       
+....................     
+....................      
+....................    iniciaLEDS(); 
+0154:  GOTO   0C4
+....................  
+....................     int x= 0; 
+0155:  BSF    03.5
+0156:  CLRF   21
+....................     while(TRUE) 
+....................     { 
+....................        
+....................        
+....................        switch(mode) { 
+0157:  MOVF   7B,W
+0158:  ADDLW  F7
+0159:  BTFSC  03.0
+015A:  GOTO   26F
+015B:  ADDLW  09
+015C:  BCF    03.5
+015D:  GOTO   271
+....................             case 0: 
+....................                if(input(PIN_B1)){      
+015E:  BSF    03.5
+015F:  BSF    06.1
+0160:  BCF    03.5
+0161:  BTFSS  06.1
+0162:  GOTO   17A
+....................          
+....................                     mode_SingleColor(0); 
+0163:  BSF    03.5
+0164:  CLRF   22
+0165:  BCF    03.5
+0166:  CALL   0E1
+....................                     delay_us(200); 
+0167:  MOVLW  C8
+0168:  BSF    03.5
+0169:  MOVWF  22
+016A:  BCF    03.5
+016B:  CALL   121
+....................                     mode_SingleColor(1); 
+016C:  MOVLW  01
+016D:  BSF    03.5
+016E:  MOVWF  22
+016F:  BCF    03.5
+0170:  CALL   0E1
+....................                     delay_us(200); 
+0171:  MOVLW  C8
+0172:  BSF    03.5
+0173:  MOVWF  22
+0174:  BCF    03.5
+0175:  CALL   121
+....................                      mode_SingleColor(0); 
+0176:  BSF    03.5
+0177:  CLRF   22
+0178:  BCF    03.5
+0179:  CALL   0E1
+....................        
+....................                   } 
+....................             break; 
+017A:  BSF    03.5
+017B:  GOTO   26F
+....................             case 1: 
+....................                   if(input(PIN_B1)){    
+017C:  BSF    03.5
+017D:  BSF    06.1
+017E:  BCF    03.5
+017F:  BTFSS  06.1
+0180:  GOTO   199
+....................                     mode_SingleColor(1); 
+0181:  MOVLW  01
+0182:  BSF    03.5
+0183:  MOVWF  22
+0184:  BCF    03.5
+0185:  CALL   0E1
+....................                     delay_us(200); 
+0186:  MOVLW  C8
+0187:  BSF    03.5
+0188:  MOVWF  22
+0189:  BCF    03.5
+018A:  CALL   121
+....................                     mode_SingleColor(0); 
+018B:  BSF    03.5
+018C:  CLRF   22
+018D:  BCF    03.5
+018E:  CALL   0E1
+....................                     delay_us(200); 
+018F:  MOVLW  C8
+0190:  BSF    03.5
+0191:  MOVWF  22
+0192:  BCF    03.5
+0193:  CALL   121
+....................                      mode_SingleColor(1); 
+0194:  MOVLW  01
+0195:  BSF    03.5
+0196:  MOVWF  22
+0197:  BCF    03.5
+0198:  CALL   0E1
+....................        
+....................                   } 
+....................             break; 
+0199:  BSF    03.5
+019A:  GOTO   26F
+....................             case 2: 
+....................                  
+....................                 if(input(PIN_B1)){    
+019B:  BSF    03.5
+019C:  BSF    06.1
+019D:  BCF    03.5
+019E:  BTFSS  06.1
+019F:  GOTO   1B9
+....................                     mode_SingleColor(2); 
+01A0:  MOVLW  02
+01A1:  BSF    03.5
+01A2:  MOVWF  22
+01A3:  BCF    03.5
+01A4:  CALL   0E1
+....................                     delay_us(200); 
+01A5:  MOVLW  C8
+01A6:  BSF    03.5
+01A7:  MOVWF  22
+01A8:  BCF    03.5
+01A9:  CALL   121
+....................                     mode_SingleColor(3); 
+01AA:  MOVLW  03
+01AB:  BSF    03.5
+01AC:  MOVWF  22
+01AD:  BCF    03.5
+01AE:  CALL   0E1
+....................                     delay_us(200); 
+01AF:  MOVLW  C8
+01B0:  BSF    03.5
+01B1:  MOVWF  22
+01B2:  BCF    03.5
+01B3:  CALL   121
+....................                      mode_SingleColor(2);       
+01B4:  MOVLW  02
+01B5:  BSF    03.5
+01B6:  MOVWF  22
+01B7:  BCF    03.5
+01B8:  CALL   0E1
+....................                   } 
+....................             break; 
+01B9:  BSF    03.5
+01BA:  GOTO   26F
+....................             case 3: 
+....................                   if(input(PIN_B1)){    
+01BB:  BSF    03.5
+01BC:  BSF    06.1
+01BD:  BCF    03.5
+01BE:  BTFSS  06.1
+01BF:  GOTO   1D9
+....................                     mode_SingleColor(3); 
+01C0:  MOVLW  03
+01C1:  BSF    03.5
+01C2:  MOVWF  22
+01C3:  BCF    03.5
+01C4:  CALL   0E1
+....................                     delay_us(200); 
+01C5:  MOVLW  C8
+01C6:  BSF    03.5
+01C7:  MOVWF  22
+01C8:  BCF    03.5
+01C9:  CALL   121
+....................                     mode_SingleColor(2); 
+01CA:  MOVLW  02
+01CB:  BSF    03.5
+01CC:  MOVWF  22
+01CD:  BCF    03.5
+01CE:  CALL   0E1
+....................                     delay_us(200); 
+01CF:  MOVLW  C8
+01D0:  BSF    03.5
+01D1:  MOVWF  22
+01D2:  BCF    03.5
+01D3:  CALL   121
+....................                      mode_SingleColor(3); 
+01D4:  MOVLW  03
+01D5:  BSF    03.5
+01D6:  MOVWF  22
+01D7:  BCF    03.5
+01D8:  CALL   0E1
+....................        
+....................                   } 
+....................             break; 
+01D9:  BSF    03.5
+01DA:  GOTO   26F
+....................             case 4: 
+....................                   if(input(PIN_B1)){    
+01DB:  BSF    03.5
+01DC:  BSF    06.1
+01DD:  BCF    03.5
+01DE:  BTFSS  06.1
+01DF:  GOTO   1F9
+....................                     mode_SingleColor(4); 
+01E0:  MOVLW  04
+01E1:  BSF    03.5
+01E2:  MOVWF  22
+01E3:  BCF    03.5
+01E4:  CALL   0E1
+....................                     delay_us(200); 
+01E5:  MOVLW  C8
+01E6:  BSF    03.5
+01E7:  MOVWF  22
+01E8:  BCF    03.5
+01E9:  CALL   121
+....................                     mode_SingleColor(5); 
+01EA:  MOVLW  05
+01EB:  BSF    03.5
+01EC:  MOVWF  22
+01ED:  BCF    03.5
+01EE:  CALL   0E1
+....................                     delay_us(200); 
+01EF:  MOVLW  C8
+01F0:  BSF    03.5
+01F1:  MOVWF  22
+01F2:  BCF    03.5
+01F3:  CALL   121
+....................                     mode_SingleColor(4); 
+01F4:  MOVLW  04
+01F5:  BSF    03.5
+01F6:  MOVWF  22
+01F7:  BCF    03.5
+01F8:  CALL   0E1
+....................        
+....................                   } 
+....................             break; 
+01F9:  BSF    03.5
+01FA:  GOTO   26F
+....................             case 5: 
+....................                 if(input(PIN_B1)){    
+01FB:  BSF    03.5
+01FC:  BSF    06.1
+01FD:  BCF    03.5
+01FE:  BTFSS  06.1
+01FF:  GOTO   219
+....................                     mode_SingleColor(5); 
+0200:  MOVLW  05
+0201:  BSF    03.5
+0202:  MOVWF  22
+0203:  BCF    03.5
+0204:  CALL   0E1
+....................                     delay_us(200); 
+0205:  MOVLW  C8
+0206:  BSF    03.5
+0207:  MOVWF  22
+0208:  BCF    03.5
+0209:  CALL   121
+....................                     mode_SingleColor(4); 
+020A:  MOVLW  04
+020B:  BSF    03.5
+020C:  MOVWF  22
+020D:  BCF    03.5
+020E:  CALL   0E1
+....................                     delay_us(200); 
+020F:  MOVLW  C8
+0210:  BSF    03.5
+0211:  MOVWF  22
+0212:  BCF    03.5
+0213:  CALL   121
+....................                     mode_SingleColor(5); 
+0214:  MOVLW  05
+0215:  BSF    03.5
+0216:  MOVWF  22
+0217:  BCF    03.5
+0218:  CALL   0E1
+....................        
+....................                   } 
+....................             break; 
+0219:  BSF    03.5
+021A:  GOTO   26F
+....................             case 6: 
+....................             if(input(PIN_B1)){    
+021B:  BSF    03.5
+021C:  BSF    06.1
+021D:  BCF    03.5
+021E:  BTFSS  06.1
+021F:  GOTO   239
+....................                     mode_SingleColor(6); 
+0220:  MOVLW  06
+0221:  BSF    03.5
+0222:  MOVWF  22
+0223:  BCF    03.5
+0224:  CALL   0E1
+....................                     delay_us(200); 
+0225:  MOVLW  C8
+0226:  BSF    03.5
+0227:  MOVWF  22
+0228:  BCF    03.5
+0229:  CALL   121
+....................                     mode_SingleColor(7); 
+022A:  MOVLW  07
+022B:  BSF    03.5
+022C:  MOVWF  22
+022D:  BCF    03.5
+022E:  CALL   0E1
+....................                     delay_us(200); 
+022F:  MOVLW  C8
+0230:  BSF    03.5
+0231:  MOVWF  22
+0232:  BCF    03.5
+0233:  CALL   121
+....................                     mode_SingleColor(6); 
+0234:  MOVLW  06
+0235:  BSF    03.5
+0236:  MOVWF  22
+0237:  BCF    03.5
+0238:  CALL   0E1
+....................        
+....................                   } 
+....................             break; 
+0239:  BSF    03.5
+023A:  GOTO   26F
+....................             case 7: 
+....................                 if(input(PIN_B1)){    
+023B:  BSF    03.5
+023C:  BSF    06.1
+023D:  BCF    03.5
+023E:  BTFSS  06.1
+023F:  GOTO   259
+....................                     mode_SingleColor(7); 
+0240:  MOVLW  07
+0241:  BSF    03.5
+0242:  MOVWF  22
+0243:  BCF    03.5
+0244:  CALL   0E1
+....................                     delay_us(200); 
+0245:  MOVLW  C8
+0246:  BSF    03.5
+0247:  MOVWF  22
+0248:  BCF    03.5
+0249:  CALL   121
+....................                     mode_SingleColor(6); 
+024A:  MOVLW  06
+024B:  BSF    03.5
+024C:  MOVWF  22
+024D:  BCF    03.5
+024E:  CALL   0E1
+....................                     delay_us(200); 
+024F:  MOVLW  C8
+0250:  BSF    03.5
+0251:  MOVWF  22
+0252:  BCF    03.5
+0253:  CALL   121
+....................                     mode_SingleColor(7); 
+0254:  MOVLW  07
+0255:  BSF    03.5
+0256:  MOVWF  22
+0257:  BCF    03.5
+0258:  CALL   0E1
+....................        
+....................                   } 
+....................             break; 
+0259:  BSF    03.5
+025A:  GOTO   26F
+....................             case 8: 
+....................                   if(input(PIN_B1)){ 
+025B:  BSF    03.5
+025C:  BSF    06.1
+025D:  BCF    03.5
+025E:  BTFSS  06.1
+025F:  GOTO   26C
+....................                      mode_SingleColor(x); 
+0260:  BSF    03.5
+0261:  MOVF   21,W
+0262:  MOVWF  22
+0263:  BCF    03.5
+0264:  CALL   0E1
+....................                      if (x >=7){x=0;} 
+0265:  BSF    03.5
+0266:  MOVF   21,W
+0267:  SUBLW  06
+0268:  BTFSS  03.0
+0269:  CLRF   21
+....................                      x++; 
+026A:  INCF   21,F
+026B:  BCF    03.5
+....................                   } 
+....................             break; 
+026C:  BSF    03.5
+026D:  GOTO   26F
+026E:  BSF    03.5
+....................             //default: 
+....................             //mode = 0; 
+....................         } 
+026F:  GOTO   157
+....................        
+....................         
+....................      // mode_SingleColor(mode); 
+....................       
+....................       
+....................     
+....................  
+....................     }   //while 
+.................... }   //main 
+0270:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F7A   HS NOWDT NOPUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

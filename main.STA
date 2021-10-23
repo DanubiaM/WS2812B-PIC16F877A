@@ -1,0 +1,62 @@
+
+ROM used:   638/8192 (8%)
+            638/8192 (8%) including unused fragments
+
+            0.7 Average locations per line
+            4.0 Average locations per statement
+
+RAM used:   97/368 (26%) at main() level
+            103/368 (28%) worst case
+
+Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  139    84  53  main.c
+  672     0   0  D:\FilesNewWindows\Microcontroladores\PICC\Devices\16F877A.h
+   15     0   0  ports.h
+   23     0   0  vars.h
+   30    17  11  NeoPixel.c
+    9     4   3  irqs.c
+   89    53  34  fun.c
+----- -----
+  977   158 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+ Inline         1             @delay_ms1
+0     17   3    1             @delay_us1
+0     28   4    0             @const643
+0     15   2    1    167  3.1  NeoBit
+0     97  15    3    518  5.4  NeoDraw
+0      9   1    0     57  2.5  interrupcion_ext
+0     64  10    3    277  3.7  mode_SingleColor
+0     29   5    2    245  3.7  iniciaLEDS
+0    319  50    0   2360  6.4  MAIN
+0     13   2    0    354  4.2  @goto10814
+ Inline         0    535  4.3  @cinit1
+
+Program metrics:
+    Functions               8
+    Statements              158
+    Comments                148
+    Volume (V)              6325
+    Difficulty (D)          34.1
+    Effort to implement (E) 215530
+    Time to implement (T)   3 hours, 20 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   28
+    Maintainability (MI)    106
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0002E    43  0  
+0002F-007FF   591  1410  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

@@ -1,0 +1,101 @@
+
+void mode_SingleColor(int8 c)
+{
+    for(i = 0; i < NUMPIXELS; i++)
+    {
+        NeoRed[i] = rainbow[0][c];
+        NeoGreen[i] = rainbow[1][c];
+        NeoBlue[i] = rainbow[2][c];
+    }
+
+    NeoDraw();
+    delay_ms(40);
+}
+
+void mode_RGB()
+{
+    
+    tempR = 0; tempG = 0; tempB = 0;
+    
+    //Primeiro laço define o pixel
+    for(int rgb  = 0; rgb < 3; rgb++){
+    
+         //Segundo laço envia 
+        for(int16 temp = 1; temp < 256; temp++)
+        {
+            if(rgb  == 0)
+                tempR = temp;
+            else 
+                if(rgb == 1)
+                    tempG = temp;
+                else
+                    tempB = temp;
+            //passa a cor temporaria para cada led
+            for(i = 0; i < NUMPIXELS; i++)
+            {
+                NeoRed[i] = tempR;
+                NeoGreen[i] = tempG;
+                NeoBlue[i] = tempB;
+                //delay_ms(100);
+            }
+
+            NeoDraw();
+            if(flag_break){
+                break;
+            }
+            delay_ms(50);
+        }
+    } 
+ 
+    for(int rgb2  = 0; rgb2 < 3; rgb2++)
+        for(temp = 255; temp > 0; temp--) {
+            if(rgb2  == 0)
+                tempR = temp;
+            else 
+            if(rgb2 == 1)
+                tempG = temp;
+            else
+                tempB = temp;
+            for(i = 0; i < NUMPIXELS; i++) {
+                NeoRed[i] = tempR;
+                NeoGreen[i] = tempG;
+                NeoBlue[i] = tempB;
+                //delay_ms(100);
+            }
+
+            NeoDraw();
+            if(flag_break) {
+                break;
+            }
+
+            delay_ms(50);
+        }
+
+    flag_break = FALSE;
+}
+
+void shift_Rainbow(){
+    int8 tempNeo = NUMPIXELS-1;
+    //ajustar brillo
+    //lo de abajo no es correcto segun C, pero funciona en CCS
+    //ajustar_brillo(&bNeoRed, &bNeoGreen, &bNeoBlue);
+    //lo correcto es
+    //ajustar_brillo(&NeoRed[0], NeoGreen, &NeoBlue[0]);
+    for(i = tempNeo; i > 0; i--) {
+        if(i == tempNeo) {
+            tempR = NeoRed[i];
+            tempG = NeoGreen[i];
+            tempB = NeoBlue[i];
+        }
+        NeoRed[i] = NeoRed[i - 1]; 
+        NeoGreen[i] = NeoGreen[i - 1];
+        NeoBlue[i] = NeoBlue[i - 1];
+
+        if(i==1) {
+            NeoRed[i - 1] = tempR;
+            NeoGreen[i - 1] = tempG;
+            NeoBlue[i - 1] = tempB;
+        }
+    }
+    
+}
